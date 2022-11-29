@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201905290745</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
     <list-property name="userProperties">
         <structure>
             <property name="name">7.dsSearchKeywords.x</property>
@@ -202,6 +202,46 @@
             <property name="type">integer</property>
             <property name="isVisible">false</property>
         </structure>
+        <structure>
+            <property name="name">45.dsReposCombined.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsReposCombined.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsReposCombined.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsReposCombined.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsFacetsCombined.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsFacetsCombined.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsFacetsCombined.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsFacetsCombined.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
     </list-property>
     <property name="7.dsSearchKeywords.x">311</property>
     <property name="7.dsSearchKeywords.y">270</property>
@@ -223,26 +263,72 @@
     <property name="7.dsSearchRepos.y">45</property>
     <property name="7.dsSearchRepos.width">150</property>
     <property name="7.dsSearchRepos.height">200</property>
-    <property name="45.dsSearchRepos.x">310</property>
-    <property name="45.dsSearchRepos.y">125</property>
+    <property name="45.dsSearchRepos.x">615</property>
+    <property name="45.dsSearchRepos.y">101</property>
     <property name="45.dsSearchRepos.width">150</property>
     <property name="45.dsSearchRepos.height">200</property>
-    <property name="45.dsSearchFacetKeywords.x">513</property>
-    <property name="45.dsSearchFacetKeywords.y">579</property>
+    <property name="45.dsSearchFacetKeywords.x">818</property>
+    <property name="45.dsSearchFacetKeywords.y">555</property>
     <property name="45.dsSearchFacetKeywords.width">150</property>
     <property name="45.dsSearchFacetKeywords.height">200</property>
-    <property name="45.dsSearch.x">110</property>
-    <property name="45.dsSearch.y">351</property>
+    <property name="45.dsSearch.x">408</property>
+    <property name="45.dsSearch.y">327</property>
     <property name="45.dsSearch.width">150</property>
     <property name="45.dsSearch.height">200</property>
-    <property name="45.dsSearchKeywords.x">308</property>
-    <property name="45.dsSearchKeywords.y">350</property>
+    <property name="45.dsSearchKeywords.x">613</property>
+    <property name="45.dsSearchKeywords.y">326</property>
     <property name="45.dsSearchKeywords.width">150</property>
     <property name="45.dsSearchKeywords.height">200</property>
-    <property name="45.dsSearchFacets.x">312</property>
-    <property name="45.dsSearchFacets.y">576</property>
+    <property name="45.dsSearchFacets.x">617</property>
+    <property name="45.dsSearchFacets.y">552</property>
     <property name="45.dsSearchFacets.width">150</property>
     <property name="45.dsSearchFacets.height">200</property>
+    <property name="45.dsReposCombined.x">209</property>
+    <property name="45.dsReposCombined.y">451</property>
+    <property name="45.dsReposCombined.width">150</property>
+    <property name="45.dsReposCombined.height">200</property>
+    <property name="45.dsFacetsCombined.x">190</property>
+    <property name="45.dsFacetsCombined.y">225</property>
+    <property name="45.dsFacetsCombined.width">150</property>
+    <property name="45.dsFacetsCombined.height">200</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">2</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">2</property>
+        </structure>
+    </list-property>
     <data-sources>
         <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="conSearchPlusPG" id="2">
             <list-property name="privateDriverProperties">
@@ -262,9 +348,9 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">jdbc:postgresql://10.18.50.98:5432/SearchPlus</property>
+            <property name="odaURL">jdbc:postgresql://10.9.40.168:5432/SearchPlus</property>
             <property name="odaUser">postgres</property>
-            <encrypted-property name="odaPassword" encryptionID="jce">901c2e83fdda402dcaab65efdde92e0b</encrypted-property>
+            <encrypted-property name="odaPassword" encryptionID="jce">ed692c756ac318b4caab65efdde92e0b</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
@@ -924,6 +1010,237 @@ from
   </design:ResultSets>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsFacetsCombined" id="81">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">SearchID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SearchID</text-property>
+                    <text-property name="heading">SearchID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Facets</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Facets</text-property>
+                    <text-property name="heading">Facets</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SearchID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Facets</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SearchID</property>
+                    <property name="nativeName">SearchID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Facets</property>
+                    <property name="nativeName">Facets</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+	  "ID" as "SearchID"
+	, '<ul>' || string_agg(format('<li>%s<ul>%s</ul></li>',"FacetField" , FacetKeyword), '') || '</ul>' As "Facets"
+from (
+	select
+		  "SearchReportFacets"."RefID" as "ID"
+		, "FacetField"
+		, string_agg(format('<li>%s</li>', "Keyword"), '' order by "Keyword") As FacetKeyword
+	from "SearchReportFacets" 
+		left outer join "SearchReportFacetKeywords" on "SearchReportFacets"."ID" = "SearchReportFacetKeywords"."RefID"
+	group by
+		  "ID"
+		, "FacetField"
+	order by "ID", "FacetField"
+) innerFacetGrouping
+group by
+	"ID"
+
+														  
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>searchid</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>searchid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>searchid</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>facet</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>facet</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>facet</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsReposCombined" id="82">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">SearchID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SearchID</text-property>
+                    <text-property name="heading">SearchID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RepoIds</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RepoIds</text-property>
+                    <text-property name="heading">RepoIds</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SearchID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RepoIds</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SearchID</property>
+                    <property name="nativeName">SearchID</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RepoIds</property>
+                    <property name="nativeName">RepoIds</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+	  "RefID" As "SearchID"
+	, string_agg("RepoID"::text, ', ' order by "RepoID") As "RepoIds"
+from "SearchReportRepos"
+group by
+	 "RefID"
+
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SearchId</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SearchId</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SearchId</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RepoIds</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>RepoIds</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RepoIds</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
     </data-sets>
     <property name="linkedDataModels">
         <linked-data-model name="Search Plus" id="45">
@@ -942,6 +1259,12 @@ from
                 </alias-data-set>
                 <alias-data-set name="dsSearchRepos" id="71">
                     <property name="originDataSet">dsSearchRepos</property>
+                </alias-data-set>
+                <alias-data-set name="dsReposCombined" id="83">
+                    <property name="originDataSet">dsReposCombined</property>
+                </alias-data-set>
+                <alias-data-set name="dsFacetsCombined" id="89">
+                    <property name="originDataSet">dsFacetsCombined</property>
                 </alias-data-set>
             </property>
             <property name="columnLinks">
@@ -1018,6 +1341,46 @@ from
                             <structure name="rightColumn">
                                 <property name="position">1</property>
                                 <property name="name">RefID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="87">
+                    <property name="leftAliasDataSet">Search Plus/dsSearch</property>
+                    <property name="rightAliasDataSet">Search Plus/dsReposCombined</property>
+                    <property name="type">left-out</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="88">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">SearchID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="93">
+                    <property name="leftAliasDataSet">Search Plus/dsSearch</property>
+                    <property name="rightAliasDataSet">Search Plus/dsFacetsCombined</property>
+                    <property name="type">left-out</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="94">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">SearchID</property>
                                 <property name="dataType">string</property>
                             </structure>
                         </column-link-detail>
@@ -1111,6 +1474,22 @@ from
                         <category-column name="RepoID" id="66">
                             <property name="aliasDataSet">Search Plus/dsSearchRepos</property>
                             <property name="resultSetColumnName">RepoID</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="ReposCombined" id="84">
+                    <property name="categoryColumns">
+                        <category-column name="RepoIds" id="86">
+                            <property name="aliasDataSet">Search Plus/dsReposCombined</property>
+                            <property name="resultSetColumnName">RepoIds</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="FacetsCombined" id="90">
+                    <property name="categoryColumns">
+                        <category-column name="Facets" id="92">
+                            <property name="aliasDataSet">Search Plus/dsFacetsCombined</property>
+                            <property name="resultSetColumnName">Facets</property>
                         </category-column>
                     </property>
                 </category>
