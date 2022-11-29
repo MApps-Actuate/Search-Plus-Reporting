@@ -1,0 +1,1202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <list-property name="includeScripts">
+        <property>js/DynamicFilter.js</property>
+    </list-property>
+    <property name="units">in</property>
+    <method name="beforeFactory"><![CDATA[
+if (params["prmActivityStartDate"].value == null) {
+	params["prmActivityStartDate"].value = BirtDateTime.addDay(BirtDateTime.today(),-30);
+}
+
+if (params["prmActivityEndDate"].value == null) {
+	params["prmActivityEndDate"].value = BirtDateTime.today();
+}
+
+applyDateRangeFilter(reportContext.getDesignHandle().findElement("LeastResults"));
+applyDateRangeFilter(reportContext.getDesignHandle().findElement("MostResults"));
+
+applyDateRangeFilter(reportContext.getDesignHandle().findElement("SearchActicity"));
+applyDateRangeFilter(reportContext.getDesignHandle().findElement("UniqueUsers"));
+
+applyDateRangeFilter(reportContext.getDesignHandle().findElement("Keywords"));
+
+
+function applyDateRangeFilter(elementHandle) {
+	if (elementHandle) {		
+		if (BirtDateTime.diffDay(params["prmActivityEndDate"].value,params["prmActivityStartDate"].value) == 0) {
+			addTableFilter(elementHandle, 'dataSetRow["Search Date"]', DesignChoiceConstants.FILTER_OPERATOR_EQ, 'params["prmActivityStartDate"].value');
+		} else {
+			addTableFilter(elementHandle, 'dataSetRow["Search Date"]', DesignChoiceConstants.FILTER_OPERATOR_BETWEEN, 'params["prmActivityStartDate"].value', 'params["prmActivityEndDate"].value');
+		}
+	}
+}
+]]></method>
+    <property name="theme">SearchPlus Themes.OpenText_PS_Light_Primary</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SearchPlus Themes.rptlibrary</property>
+            <property name="namespace">SearchPlus Themes</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SearchPlus Controls.rptlibrary</property>
+            <property name="namespace">SearchPlus Controls</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="prmActivityStartDate" id="151">
+            <text-property name="promptText">Activity Start Date</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.addDay(BirtDateTime.today(),-30)</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="prmActivityEndDate" id="152">
+            <text-property name="promptText">Activity End Date</text-property>
+            <property name="valueType">static</property>
+            <property name="isRequired">false</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.today()</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="conSearchPlusDO" id="6">
+            <property name="datamartURL">Data Objects/Search Plus Reporting</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Search Plus" id="5">
+            <property name="dataSource">conSearchPlusDO</property>
+            <property name="dataObject">Search Plus</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <page-header>
+                <grid id="282">
+                    <column id="283"/>
+                    <row id="285">
+                        <property name="backgroundColor">#E7EDF8</property>
+                        <property name="fontFamily">"Lato"</property>
+                        <property name="fontSize">16pt</property>
+                        <property name="verticalAlign">middle</property>
+                        <property name="height">0.5in</property>
+                        <cell id="286">
+                            <text id="291">
+                                <property name="style">ReportTitle</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Search+ Activity for 
+<VALUE-OF> 
+if (BirtDateTime.diffDay(params["prmActivityEndDate"].value,params["prmActivityStartDate"].value) == 0) {
+     Formatter.format(params["prmActivityStartDate"].value, "Medium Date")  
+} else { 
+	Formatter.format(params["prmActivityStartDate"].value, "Medium Date") + " and " +     Formatter.format(params["prmActivityEndDate"].value, "Medium Date")
+}
+</VALUE-OF>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="84">
+            <property name="width">100%</property>
+            <column id="85">
+                <property name="width">49%</property>
+            </column>
+            <column id="144">
+                <property name="width">10pt</property>
+            </column>
+            <column id="86"/>
+            <row id="88">
+                <cell id="89">
+                    <extended-item extensionName="Chart" name="SearchActicity" id="80">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="Search Activity"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <cursor type="0"/>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,0.0,249.75"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="enable.data.summarize" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/05/2000,02/01/2000,04/12/2000,03/12/2000,02/29/2000"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+   <orthogonalSampleData dataSetRepresentation="42,91,62,9,21" seriesDefinitionIndex="1"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title visible="true">
+     <caption value="No of searches"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Searches" stacked="false" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;ID&quot;]">
+       <grouping enabled="true" aggregateExpression="Count"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <triggers condition="2">
+       <action type="0">
+        <value _type="MultiURLValues">
+         <uRLValues baseUrl="&lt;structure&gt;&#10;    &lt;property name=&quot;linkType&quot;&gt;drill-through&lt;/property&gt;&#10;    &lt;property name=&quot;reportName&quot;&gt;User Activity List.rptdesign&lt;/property&gt;&#10;    &lt;property name=&quot;targetWindow&quot;&gt;_blank&lt;/property&gt;&#10;    &lt;property name=&quot;targetFileType&quot;&gt;report-design&lt;/property&gt;&#10;    &lt;list-property name=&quot;paramBindings&quot;&gt;&#10;        &lt;structure&gt;&#10;            &lt;property name=&quot;paramName&quot;&gt;prmActivity&lt;/property&gt;&#10;            &lt;simple-property-list name=&quot;expression&quot;&gt;&#10;                &lt;value type=&quot;javascript&quot;&gt;&quot;SEARCH&quot;&lt;/value&gt;&#10;            &lt;/simple-property-list&gt;&#10;        &lt;/structure&gt;&#10;        &lt;structure&gt;&#10;            &lt;property name=&quot;paramName&quot;&gt;prmActivityStartDate&lt;/property&gt;&#10;            &lt;simple-property-list name=&quot;expression&quot;&gt;&#10;                &lt;value type=&quot;javascript&quot;&gt;categoryData&lt;/value&gt;&#10;            &lt;/simple-property-list&gt;&#10;        &lt;/structure&gt;&#10;        &lt;structure&gt;&#10;            &lt;property name=&quot;paramName&quot;&gt;prmActivityEndDate&lt;/property&gt;&#10;            &lt;simple-property-list name=&quot;expression&quot;&gt;&#10;                &lt;value type=&quot;javascript&quot;&gt;categoryData&lt;/value&gt;&#10;            &lt;/simple-property-list&gt;&#10;        &lt;/structure&gt;&#10;        &lt;structure&gt;&#10;            &lt;property name=&quot;paramName&quot;&gt;prmActicityCount&lt;/property&gt;&#10;            &lt;simple-property-list name=&quot;expression&quot;&gt;&#10;                &lt;value type=&quot;javascript&quot;&gt;valueData&lt;/value&gt;&#10;            &lt;/simple-property-list&gt;&#10;        &lt;/structure&gt;&#10;    &lt;/list-property&gt;&#10;&lt;/structure&gt;&#10;" baseParameterName="" valueParameterName="" seriesParameterName="">
+          <label>
+           <caption value="Search Activity List"/>
+          </label>
+         </uRLValues>
+         <propertiesMap key="MenuItem" value="color:Black;fontSize:10pt;paddingLeft:10px;paddingRight:10px;paddingTop:2px;paddingBottom:2px"/>
+         <propertiesMap key="Menu" value="zIndex:99999;backgroundColor:#FAFFF8;width:auto;height:auto;border:1px solid #333333;filter:progid:DXImageTransform.Microsoft.Shadow(Color:#333333,Direction=120,strength=5)"/>
+         <propertiesMap key="OnMouseOut" value="backgroundColor:#FAFFF8;color:#000000"/>
+         <propertiesMap key="OnMouseOver" value="backgroundColor:#245DDB;color:#FFFFFF"/>
+        </value>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <associatedAxes titlePosition="3" labelPosition="3" primaryAxis="false">
+    <title visible="true">
+     <caption value="Avg Query Time (ms)"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="LineSeries" seriesIdentifier="Avg Query Time" stacked="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;Query Time&quot;]">
+       <grouping enabled="true" aggregateExpression="Average"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <triggers condition="2">
+       <action type="0">
+        <value _type="MultiURLValues">
+         <propertiesMap key="MenuItem" value="color:Black;fontSize:10pt;paddingLeft:10px;paddingRight:10px;paddingTop:2px;paddingBottom:2px"/>
+         <propertiesMap key="Menu" value="zIndex:99999;backgroundColor:#FAFFF8;width:auto;height:auto;border:1px solid #333333;filter:progid:DXImageTransform.Microsoft.Shadow(Color:#333333,Direction=120,strength=5)"/>
+         <propertiesMap key="OnMouseOut" value="backgroundColor:#FAFFF8;color:#000000"/>
+         <propertiesMap key="OnMouseOver" value="backgroundColor:#245DDB;color:#FFFFFF"/>
+        </value>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers type="3" size="2" visible="true">
+       <outline visible="false"/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <formatSpecifier _type="JavaNumberFormatSpecifier" pattern="#,##0"/>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin type="1">
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Search Date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="1"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <caption>
+     <font name="Lato" size="10.0"/>
+     <color _body=",255,51,51,51"/>
+    </caption>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <formatSpecifier _type="JavaDateFormatSpecifier" pattern="MMM d"/>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                        <property name="outputFormat">JS</property>
+                        <list-property name="action">
+                            <structure>
+                                <property name="targetWindow">_blank</property>
+                                <property name="linkType">drill-through</property>
+                                <property name="targetFileType">report-design</property>
+                                <property name="reportName">User Activity List.rptdesign</property>
+                                <list-property name="paramBindings">
+                                    <structure>
+                                        <property name="paramName">prmActivity</property>
+                                        <simple-property-list name="expression">
+                                            <value type="javascript">"SEARCH"</value>
+                                        </simple-property-list>
+                                    </structure>
+                                    <structure>
+                                        <property name="paramName">prmActivityStartDate</property>
+                                        <simple-property-list name="expression">
+                                            <value type="javascript">categoryData</value>
+                                        </simple-property-list>
+                                    </structure>
+                                    <structure>
+                                        <property name="paramName">prmActivityEndDate</property>
+                                        <simple-property-list name="expression">
+                                            <value type="javascript">categoryData</value>
+                                        </simple-property-list>
+                                    </structure>
+                                    <structure>
+                                        <property name="paramName">prmActicityCount</property>
+                                        <simple-property-list name="expression">
+                                            <value type="javascript">valueData</value>
+                                        </simple-property-list>
+                                    </structure>
+                                </list-property>
+                            </structure>
+                        </list-property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">eq</property>
+                                <expression name="expr" type="javascript">data["Event"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">"SEARCH"</value>
+                                </simple-property-list>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="inheritColumns">true</property>
+                        <property name="height">250pt</property>
+                        <property name="width">100%</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ID</property>
+                                <text-property name="displayName">ID</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Search Date</property>
+                                <text-property name="displayName">Search Date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Search Date"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Event</property>
+                                <text-property name="displayName">Event</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Event"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Query Time</property>
+                                <text-property name="displayName">Query Time</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Query Time"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Search Date_1</property>
+                                <text-property name="displayName">Search Date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Search Date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Search Plus</property>
+                    </extended-item>
+                </cell>
+                <cell id="140"/>
+                <cell id="90">
+                    <extended-item extensionName="Chart" name="UniqueUsers" id="83">
+                        <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock" visible="true">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="Unique Users"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,0.0,249.75"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="enable.data.summarize" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/05/2000,02/01/2000,04/12/2000,03/12/2000,02/29/2000"/>
+   <orthogonalSampleData dataSetRepresentation="5,4,12" seriesDefinitionIndex="0"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes primaryAxis="true">
+    <title visible="true">
+     <caption value="# Unique Users"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="Series 1" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;User&quot;]">
+       <grouping enabled="true" aggregateExpression="DistinctCount"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Search Date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="1"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <formatSpecifier _type="JavaDateFormatSpecifier" pattern="MMM d"/>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                        <property name="outputFormat">JS</property>
+                        <property name="inheritColumns">true</property>
+                        <property name="height">250pt</property>
+                        <property name="width">100%</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">User</property>
+                                <text-property name="displayName">User</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["User"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Search Date</property>
+                                <text-property name="displayName">Search Date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Search Date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="theme">SearchPlus Themes.Chart-OpenText_PS_Light_Primary</property>
+                        <property name="linkedDataModel">Search Plus</property>
+                    </extended-item>
+                </cell>
+            </row>
+            <row id="135">
+                <property name="height">10pt</property>
+                <cell id="136"/>
+                <cell id="141"/>
+                <cell id="137"/>
+            </row>
+            <row id="92">
+                <property name="style">SectionTitle</property>
+                <property name="fontFamily">"Lato"</property>
+                <property name="fontSize">14pt</property>
+                <cell id="93">
+                    <label id="138">
+                        <property name="style">SectionTitle</property>
+                        <text-property name="text">Queries that returned least results</text-property>
+                    </label>
+                </cell>
+                <cell id="142"/>
+                <cell id="94">
+                    <label id="139">
+                        <property name="style">SectionTitle</property>
+                        <text-property name="text">Queries that returned most results</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="118">
+                <cell id="119">
+                    <table name="LeastResults" id="121">
+                        <list-property name="userProperties">
+                            <structure>
+                                <property name="name">__ac_group_collapse_level</property>
+                                <property name="type">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="theme">SearchPlus Themes.Table-OpenText_PS_Light_Primary</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Search Text</property>
+                                <text-property name="displayName">Search Text</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Search Text"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Hits</property>
+                                <text-property name="displayName">Hits</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Hits"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Max_Hits</property>
+                                <property name="dataType">integer</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">MAX</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["Hits"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Search Plus</property>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">row["Max_Hits"]</expression>
+                                <property name="direction">asc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">bottom-n</property>
+                                <expression name="expr" type="javascript">row["Max_Hits"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">10</value>
+                                </simple-property-list>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                            <structure>
+                                <property name="operator">is-not-null</property>
+                                <expression name="expr" type="javascript">row["Search Text"]</expression>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="isSummaryTable">true</property>
+                        <column id="133">
+                            <property name="textAlign">left</property>
+                        </column>
+                        <column id="134">
+                            <property name="textAlign">right</property>
+                        </column>
+                        <header>
+                            <row id="122">
+                                <cell id="123">
+                                    <label id="124">
+                                        <text-property name="text">Query</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="125">
+                                    <label id="126">
+                                        <text-property name="text">Hits</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="127">
+                            <property name="groupName">NewTableGroup1</property>
+                            <expression name="keyExpr" type="javascript">row["Search Text"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue" type="javascript">row["Search Text"]</expression>
+                            </structure>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="128">
+                                    <cell id="129">
+                                        <data id="130">
+                                            <property name="resultSetColumn">Search Text</property>
+                                            <list-property name="action">
+                                                <structure>
+                                                    <property name="linkType">drill-through</property>
+                                                    <property name="reportName">Query Details.rptdesign</property>
+                                                    <property name="targetWindow">_blank</property>
+                                                    <property name="targetFileType">report-design</property>
+                                                    <list-property name="paramBindings">
+                                                        <structure>
+                                                            <property name="paramName">prmActivityStartDate</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">params["prmActivityStartDate"].value</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="paramName">prmActivityEndDate</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">params["prmActivityEndDate"].value</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="paramName">prmSearchText</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">row["Search Text"]</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                    </list-property>
+                                                </structure>
+                                            </list-property>
+                                        </data>
+                                    </cell>
+                                    <cell id="131">
+                                        <data id="132">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                            </structure>
+                                            <property name="resultSetColumn">Max_Hits</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </header>
+                        </group>
+                    </table>
+                </cell>
+                <cell id="143"/>
+                <cell id="120">
+                    <table name="MostResults" id="97">
+                        <list-property name="userProperties">
+                            <structure>
+                                <property name="name">__ac_group_collapse_level</property>
+                                <property name="type">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="theme">SearchPlus Themes.Table-OpenText_PS_Light_Primary</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Search Text</property>
+                                <text-property name="displayName">Search Text</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Search Text"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Hits</property>
+                                <text-property name="displayName">Hits</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Hits"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Max_Hits</property>
+                                <property name="dataType">integer</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>NewTableGroup1</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">MAX</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">row["Hits"]</expression>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Search Plus</property>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">row["Max_Hits"]</expression>
+                                <property name="direction">desc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <list-property name="filter">
+                            <structure>
+                                <property name="operator">top-n</property>
+                                <expression name="expr" type="javascript">row["Max_Hits"]</expression>
+                                <simple-property-list name="value1">
+                                    <value type="javascript">10</value>
+                                </simple-property-list>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                            <structure>
+                                <property name="operator">is-not-null</property>
+                                <expression name="expr" type="javascript">row["Search Text"]</expression>
+                                <property name="updateAggregation">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="isSummaryTable">true</property>
+                        <column id="106">
+                            <property name="textAlign">left</property>
+                        </column>
+                        <column id="107">
+                            <property name="textAlign">right</property>
+                        </column>
+                        <header>
+                            <row id="98">
+                                <cell id="99">
+                                    <label id="100">
+                                        <text-property name="text">Query</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="101">
+                                    <label id="102">
+                                        <text-property name="text">Hits</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="110">
+                            <property name="groupName">NewTableGroup1</property>
+                            <expression name="keyExpr" type="javascript">row["Search Text"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue" type="javascript">row["Search Text"]</expression>
+                            </structure>
+                            <property name="hideDetail">false</property>
+                            <header>
+                                <row id="111">
+                                    <cell id="112">
+                                        <data id="117">
+                                            <property name="resultSetColumn">Search Text</property>
+                                            <list-property name="action">
+                                                <structure>
+                                                    <property name="linkType">drill-through</property>
+                                                    <property name="reportName">Query Details.rptdesign</property>
+                                                    <property name="targetWindow">_blank</property>
+                                                    <property name="targetFileType">report-design</property>
+                                                    <list-property name="paramBindings">
+                                                        <structure>
+                                                            <property name="paramName">prmActivityStartDate</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">params["prmActivityStartDate"].value</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="paramName">prmActivityEndDate</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">params["prmActivityEndDate"].value</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                        <structure>
+                                                            <property name="paramName">prmSearchText</property>
+                                                            <simple-property-list name="expression">
+                                                                <value type="javascript">row["Search Text"]</value>
+                                                            </simple-property-list>
+                                                        </structure>
+                                                    </list-property>
+                                                </structure>
+                                            </list-property>
+                                        </data>
+                                    </cell>
+                                    <cell id="113">
+                                        <data id="109">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                            </structure>
+                                            <property name="resultSetColumn">Max_Hits</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </header>
+                        </group>
+                    </table>
+                </cell>
+            </row>
+            <row id="153">
+                <property name="height">10pt</property>
+                <cell id="154"/>
+                <cell id="155"/>
+                <cell id="156"/>
+            </row>
+            <row id="157">
+                <property name="style">SectionTitle</property>
+                <property name="fontFamily">"Lato"</property>
+                <property name="fontSize">14pt</property>
+                <cell id="158">
+                    <label id="162">
+                        <property name="style">SectionTitle</property>
+                        <text-property name="text">Popular Keywords</text-property>
+                    </label>
+                </cell>
+                <cell id="159"/>
+                <cell id="160"/>
+            </row>
+            <row id="145">
+                <cell id="146">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <extended-item extensionName="HTMLControl" name="Keywords" id="149">
+                        <method name="clientOnCreate"><![CDATA[var config = {
+	wordColumn : "Keyword",
+	wordSize: "Count",
+	min:100000000,
+	max:0,
+	
+	/* the total number of word to display */
+	wordCount : 25
+};
+var vizHeight = 250;
+
+// If data binding is used, the data should be saved and transformed in order
+// to fit the Word Cloud Chart map.
+function dataTransfrom(cursor) {
+debugger;
+	var rows = [];
+	var count = 0;
+	var keyword = null;
+	var lastKeyword = null;
+	var keywordCount = 0;
+	while (cursor.hasNext()) {
+		var dataObj = cursor.next();
+		if (window.wc_date_param == null) {
+			window.wc_date_param = dataObj["parameters"];
+		}
+		
+		keyword = dataObj[config.wordColumn];
+		
+		if (keyword != lastKeyword) {
+			if (lastKeyword != null) {
+				rows.push({word: lastKeyword, value: keywordCount, color: '#111a58'});
+				if (config.min> keywordCount)
+					config.min = keywordCount;
+				if (config.max < keywordCount)
+					config.max = keywordCount;
+			}
+			lastKeyword = keyword;
+			keywordCount = 0;
+		}
+		keywordCount++;
+	}
+
+	rows.sort(function(a, b) {
+    	return b.value - a.value;
+	});
+	if (rows.length > config.wordCount) {
+		return rows.slice(0, config.wordCount)
+	} else {
+		return rows;
+	}
+}
+var containerId = this.getId();
+
+var data = dataTransfrom(this.getDataCursor());
+
+window["__draw_word_cloud"] = function(containerId, data, min, max) {
+	var colors = ["#4D4D4D", "#989898","#b8b8b8"];
+	var typeSize = [14, 18, 24, 32, 40, 48, 60, 72, 96, 128, 144];
+	var containerWidth = $("#" + containerId).width();
+	var containerHeight = vizHeight;
+	
+	var fontScale = d3.scale.linear()
+    			.domain([config.min, config.max])
+                .range([14, 50]);
+	var fill = d3.scale.linear()
+	        .domain([max, max * 0.7, min])
+            .range(colors);
+
+	d3.layout.cloud().size([ containerWidth, containerHeight ]).words(
+			data.map(function(row) {
+				var idx = (row.value == max) ? typeSize.length : Math.floor(row.value / ((max - min) / typeSize.length));
+				return {
+					text : row.word,
+					size : fontScale(row.value)
+				};
+			})).padding(5).rotate(function() {
+		return 0;
+	}).font("Lato").fontSize(function(d) {
+		return d.size;
+	}).on("end", draw).start();
+
+
+	function draw(words) {
+		$("#" + containerId + " svg").remove();
+		d3.select("#" + containerId).append("svg")
+				.attr("width", containerWidth).attr("height", containerHeight).attr("class","wordcloud")
+				.append("g").attr(
+						"transform",
+						"translate(" + containerWidth / 2 + ","
+								+ containerHeight / 2 + ")").selectAll("text")
+				.data(words).enter().append("text").style("font-size", function(d) {
+							return d.size + "px";
+						}).style("font-family", "Lato").style("font-size",function(d){
+							return d.size + "px";
+						}).style("fill", function(d, i) {
+							return (data[i].color);
+						}).attr("class", "IHUBWC_keyword")
+						.attr("text-anchor", "middle").attr("transform", function(d) {
+							return "translate(" + [ d.x, d.y ] + ") rotate("
+									+ d.rotate + ")";
+						}).text(function(d) {
+					return d.text;
+				});
+	}
+	
+	$(".IHUBWC_keyword").click(function(){
+		ws = window.location.protocol + '//' + window.location.host;
+		
+		debugger;
+		loc = 'Search Plus Reporting'
+			
+		url = "/iportal/executereport.do?__requesttype=immediate&amp;invokesubmit=true&amp;__executablename=/Applications/" + loc + "/Report Designs/";
+		url += "Keyword%20Details.rptdesign&amp;prmKeyword=" + $(this).text() 
+		if (window.wc_date_param) {
+			url += "&amp;" + window.wc_date_param
+		}
+		//url += "&amp;__format=HTML";
+	
+		//win = window.open(url, '_blank', 'toolbar=no,scrollbars=yes,resizable=yes,top=200,left=500,width=1300,height=600');
+		win = window.open(url);
+		win.focus(); 	
+	})
+	
+}
+
+window["__data"] = data;
+window["__containerId"] = containerId;
+
+var downloadURL = 'js/d3-cloud-master/d3.layout.cloud.js';
+head.load('http://d3js.org/d3.v2.min.js', this.getBirtResourceURL(downloadURL), function() {
+	__draw_word_cloud(containerId, data, config.min, config.max);
+});
+]]></method>
+                        <list-property name="sort">
+                            <structure>
+                                <expression name="key" type="javascript">data["Keyword"]</expression>
+                                <property name="direction">asc</property>
+                                <property name="strength">-1</property>
+                            </structure>
+                        </list-property>
+                        <property name="height">0.13541666666666666in</property>
+                        <property name="width">100%</property>
+                        <expression name="bookmark" type="javascript">"wordCloud"</expression>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Keyword</property>
+                                <text-property name="displayName">Keyword</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Keyword"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">parameters</property>
+                                <expression name="expression" type="javascript">"prmActivityStartDate=" + Formatter.format(params["prmActivityStartDate"].value, "yyyy-MM-dd") + "&amp;amp;prmActivityEndDate=" + Formatter.format(params["prmActivityEndDate"].value, "yyyy-MM-dd")</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="linkedDataModel">Search Plus</property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

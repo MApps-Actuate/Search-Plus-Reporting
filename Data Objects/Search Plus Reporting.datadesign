@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201905290745</property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">7.dsSearchKeywords.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchKeywords.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchKeywords.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchKeywords.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacetKeywords.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacetKeywords.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacetKeywords.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacetKeywords.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacets.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacets.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacets.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchFacets.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearch.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearch.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearch.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearch.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchRepos.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchRepos.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchRepos.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">7.dsSearchRepos.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchRepos.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchRepos.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchRepos.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchRepos.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacetKeywords.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacetKeywords.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacetKeywords.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacetKeywords.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearch.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearch.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearch.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearch.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchKeywords.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchKeywords.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchKeywords.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchKeywords.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacets.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacets.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacets.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">45.dsSearchFacets.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="7.dsSearchKeywords.x">311</property>
+    <property name="7.dsSearchKeywords.y">270</property>
+    <property name="7.dsSearchKeywords.width">150</property>
+    <property name="7.dsSearchKeywords.height">200</property>
+    <property name="7.dsSearchFacetKeywords.x">536</property>
+    <property name="7.dsSearchFacetKeywords.y">507</property>
+    <property name="7.dsSearchFacetKeywords.width">150</property>
+    <property name="7.dsSearchFacetKeywords.height">200</property>
+    <property name="7.dsSearchFacets.x">309</property>
+    <property name="7.dsSearchFacets.y">501</property>
+    <property name="7.dsSearchFacets.width">150</property>
+    <property name="7.dsSearchFacets.height">200</property>
+    <property name="7.dsSearch.x">96</property>
+    <property name="7.dsSearch.y">340</property>
+    <property name="7.dsSearch.width">150</property>
+    <property name="7.dsSearch.height">200</property>
+    <property name="7.dsSearchRepos.x">313</property>
+    <property name="7.dsSearchRepos.y">45</property>
+    <property name="7.dsSearchRepos.width">150</property>
+    <property name="7.dsSearchRepos.height">200</property>
+    <property name="45.dsSearchRepos.x">310</property>
+    <property name="45.dsSearchRepos.y">125</property>
+    <property name="45.dsSearchRepos.width">150</property>
+    <property name="45.dsSearchRepos.height">200</property>
+    <property name="45.dsSearchFacetKeywords.x">513</property>
+    <property name="45.dsSearchFacetKeywords.y">579</property>
+    <property name="45.dsSearchFacetKeywords.width">150</property>
+    <property name="45.dsSearchFacetKeywords.height">200</property>
+    <property name="45.dsSearch.x">110</property>
+    <property name="45.dsSearch.y">351</property>
+    <property name="45.dsSearch.width">150</property>
+    <property name="45.dsSearch.height">200</property>
+    <property name="45.dsSearchKeywords.x">308</property>
+    <property name="45.dsSearchKeywords.y">350</property>
+    <property name="45.dsSearchKeywords.width">150</property>
+    <property name="45.dsSearchKeywords.height">200</property>
+    <property name="45.dsSearchFacets.x">312</property>
+    <property name="45.dsSearchFacets.y">576</property>
+    <property name="45.dsSearchFacets.width">150</property>
+    <property name="45.dsSearchFacets.height">200</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="conSearchPlusPG" id="2">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://10.18.50.98:5432/SearchPlus</property>
+            <property name="odaUser">postgres</property>
+            <encrypted-property name="odaPassword" encryptionID="jce">901c2e83fdda402dcaab65efdde92e0b</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsSearch" id="3">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">ID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">User</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">User</text-property>
+                    <text-property name="heading">User</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Event</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Event</text-property>
+                    <text-property name="heading">Event</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Search Text</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Search Text</text-property>
+                    <text-property name="heading">Search Text</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Query Time</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Query Time</text-property>
+                    <text-property name="heading">Query Time</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Hits</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Hits</text-property>
+                    <text-property name="heading">Hits</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Search Date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Search Date</text-property>
+                    <text-property name="heading">Search Date</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Search DateTime</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Search DateTime</text-property>
+                    <text-property name="heading">Search DateTime</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">User</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Event</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Search Text</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Query Time</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Hits</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Search Date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Search DateTime</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">User</property>
+                    <property name="nativeName">User</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">Event</property>
+                    <property name="nativeName">Event</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">Search Text</property>
+                    <property name="nativeName">Search Text</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">Query Time</property>
+                    <property name="nativeName">Query Time</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">Hits</property>
+                    <property name="nativeName">Hits</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">-5</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">Search Date</property>
+                    <property name="nativeName">Search Date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">Search DateTime</property>
+                    <property name="nativeName">Search DateTime</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+      "ID"
+	, "UserID" As "User"
+	, "Event"
+	, "SearchText" As "Search Text"
+	, "QueryTime" As "Query Time"
+	, "Hits"
+	, "TimeStamp"::date As "Search Date"
+	, "TimeStamp" As "Search DateTime"
+from "SearchReport"]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsSearchKeywords" id="4">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">RefID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RefID</text-property>
+                    <text-property name="heading">RefID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Keyword</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Keyword</text-property>
+                    <text-property name="heading">Keyword</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RefID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Keyword</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RefID</property>
+                    <property name="nativeName">RefID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Keyword</property>
+                    <property name="nativeName">Keyword</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+      "RefID"
+	, "Keywords" As "Keyword"
+from 
+    "SearchReportKeywords"]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RefID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RefID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RefID</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Keywords</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Keywords</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Keywords</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsSearchFacets" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">ID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RefID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RefID</text-property>
+                    <text-property name="heading">RefID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">FacetField</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FacetField</text-property>
+                    <text-property name="heading">FacetField</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RefID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">FacetField</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RefID</property>
+                    <property name="nativeName">RefID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">FacetField</property>
+                    <property name="nativeName">FacetField</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+	  "ID"
+	, "RefID"
+	, "FacetField"
+from 
+	"SearchReportFacets"]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RefID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RefID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RefID</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FacetField</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FacetField</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FacetField</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsSearchFacetKeywords" id="6">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">RefID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RefID</text-property>
+                    <text-property name="heading">RefID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">Keyword</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Keyword</text-property>
+                    <text-property name="heading">Keyword</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RefID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Keyword</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RefID</property>
+                    <property name="nativeName">RefID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">Keyword</property>
+                    <property name="nativeName">Keyword</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+	  "RefID"
+	, "Keyword"
+from 
+	"SearchReportFacetKeywords"]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RefID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RefID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RefID</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>Keyword</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Keyword</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Keyword</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="dsSearchRepos" id="36">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">RefID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RefID</text-property>
+                    <text-property name="heading">RefID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+                <structure>
+                    <property name="columnName">RepoID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">RepoID</text-property>
+                    <text-property name="heading">RepoID</text-property>
+                    <property name="indexColumn">false</property>
+                    <property name="compressed">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">RefID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">RepoID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">conSearchPlusPG</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">RefID</property>
+                    <property name="nativeName">RefID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">1111</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">RepoID</property>
+                    <property name="nativeName">RepoID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select "RefID"
+	, "RepoID"
+from 
+	"SearchReportRepos"]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RefID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>1111</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RefID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RefID</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RepoID</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RepoID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RepoID</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <property name="linkedDataModels">
+        <linked-data-model name="Search Plus" id="45">
+            <property name="aliasDataSets">
+                <alias-data-set name="dsSearch" id="67">
+                    <property name="originDataSet">dsSearch</property>
+                </alias-data-set>
+                <alias-data-set name="dsSearchKeywords" id="68">
+                    <property name="originDataSet">dsSearchKeywords</property>
+                </alias-data-set>
+                <alias-data-set name="dsSearchFacets" id="69">
+                    <property name="originDataSet">dsSearchFacets</property>
+                </alias-data-set>
+                <alias-data-set name="dsSearchFacetKeywords" id="70">
+                    <property name="originDataSet">dsSearchFacetKeywords</property>
+                </alias-data-set>
+                <alias-data-set name="dsSearchRepos" id="71">
+                    <property name="originDataSet">dsSearchRepos</property>
+                </alias-data-set>
+            </property>
+            <property name="columnLinks">
+                <column-link id="72">
+                    <property name="leftAliasDataSet">Search Plus/dsSearch</property>
+                    <property name="rightAliasDataSet">Search Plus/dsSearchKeywords</property>
+                    <property name="type">left-out</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="73">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">RefID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="74">
+                    <property name="leftAliasDataSet">Search Plus/dsSearch</property>
+                    <property name="rightAliasDataSet">Search Plus/dsSearchRepos</property>
+                    <property name="type">left-out</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="75">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">RefID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="76">
+                    <property name="leftAliasDataSet">Search Plus/dsSearch</property>
+                    <property name="rightAliasDataSet">Search Plus/dsSearchFacets</property>
+                    <property name="type">left-out</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="77">
+                            <structure name="leftColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">ID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+                <column-link id="78">
+                    <property name="leftAliasDataSet">Search Plus/dsSearchFacets</property>
+                    <property name="rightAliasDataSet">Search Plus/dsSearchFacetKeywords</property>
+                    <property name="columnLinkDetails">
+                        <column-link-detail id="79">
+                            <structure name="leftColumn">
+                                <property name="position">2</property>
+                                <property name="name">RefID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure name="rightColumn">
+                                <property name="position">1</property>
+                                <property name="name">RefID</property>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </column-link-detail>
+                    </property>
+                    <property name="allowPushdown">false</property>
+                </column-link>
+            </property>
+            <property name="categories">
+                <category name="Search" id="46">
+                    <property name="categoryColumns">
+                        <category-column name="ID" id="47">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">ID</property>
+                        </category-column>
+                        <category-column name="User" id="48">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">User</property>
+                        </category-column>
+                        <category-column name="Event" id="49">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Event</property>
+                        </category-column>
+                        <category-column name="Search Text" id="50">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Search Text</property>
+                        </category-column>
+                        <category-column name="Query Time" id="51">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Query Time</property>
+                        </category-column>
+                        <category-column name="Hits" id="52">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Hits</property>
+                        </category-column>
+                        <category-column name="Search Date" id="53">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Search Date</property>
+                        </category-column>
+                        <category-column name="Search DateTime" id="80">
+                            <property name="aliasDataSet">Search Plus/dsSearch</property>
+                            <property name="resultSetColumnName">Search DateTime</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="Keywords" id="54">
+                    <property name="categoryColumns">
+                        <category-column name="RefID" id="55">
+                            <property name="aliasDataSet">Search Plus/dsSearchKeywords</property>
+                            <property name="resultSetColumnName">RefID</property>
+                        </category-column>
+                        <category-column name="Keyword" id="56">
+                            <property name="aliasDataSet">Search Plus/dsSearchKeywords</property>
+                            <property name="resultSetColumnName">Keyword</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="Facets" id="57">
+                    <property name="categoryColumns">
+                        <category-column name="ID1" id="58">
+                            <property name="aliasDataSet">Search Plus/dsSearchFacets</property>
+                            <property name="resultSetColumnName">ID</property>
+                        </category-column>
+                        <category-column name="RefID1" id="59">
+                            <property name="aliasDataSet">Search Plus/dsSearchFacets</property>
+                            <property name="resultSetColumnName">RefID</property>
+                        </category-column>
+                        <category-column name="FacetField" id="60">
+                            <property name="aliasDataSet">Search Plus/dsSearchFacets</property>
+                            <property name="resultSetColumnName">FacetField</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="Facet Keywords" id="61">
+                    <property name="categoryColumns">
+                        <category-column name="RefID2" id="62">
+                            <property name="aliasDataSet">Search Plus/dsSearchFacetKeywords</property>
+                            <property name="resultSetColumnName">RefID</property>
+                        </category-column>
+                        <category-column name="Keyword1" id="63">
+                            <property name="aliasDataSet">Search Plus/dsSearchFacetKeywords</property>
+                            <property name="resultSetColumnName">Keyword</property>
+                        </category-column>
+                    </property>
+                </category>
+                <category name="Repositories" id="64">
+                    <property name="categoryColumns">
+                        <category-column name="RefID3" id="65">
+                            <property name="aliasDataSet">Search Plus/dsSearchRepos</property>
+                            <property name="resultSetColumnName">RefID</property>
+                        </category-column>
+                        <category-column name="RepoID" id="66">
+                            <property name="aliasDataSet">Search Plus/dsSearchRepos</property>
+                            <property name="resultSetColumnName">RepoID</property>
+                        </category-column>
+                    </property>
+                </category>
+            </property>
+            <property name="pushDown">true</property>
+        </linked-data-model>
+    </property>
+</datamart>

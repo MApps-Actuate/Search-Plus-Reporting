@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <list-property name="includeScripts">
+        <property>js/DynamicFilter.js</property>
+    </list-property>
+    <property name="units">in</property>
+    <property name="theme">SearchPlus Themes.OpenText_PS_Light_Primary</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="libraries">
+        <structure>
+            <property name="fileName">/ThemesReportItems31.rptlibrary</property>
+            <property name="namespace">ThemesReportItems31</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SearchPlus Controls.rptlibrary</property>
+            <property name="namespace">SearchPlus Controls</property>
+        </structure>
+        <structure>
+            <property name="fileName">Report Libraries/SearchPlus Themes.rptlibrary</property>
+            <property name="namespace">SearchPlus Themes</property>
+        </structure>
+    </list-property>
+    <method name="onContentUpdate"><![CDATA[if (!this.getViewer().isInteractive()) {
+	// Enable interactivity
+	this.getViewer().enableIV();	
+}]]></method>
+    <parameters>
+        <scalar-parameter name="prmActivityStartDate" id="6">
+            <text-property name="promptText">Active End Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.addDay(BirtDateTime.today(),-1)</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="prmActivityEndDate" id="5">
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="javascript">BirtDateTime.today()</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="prmSearchText" id="293">
+            <text-property name="promptText">Keyword</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <data-mart-data-source name="conSearchPlusDO" id="8">
+            <property name="datamartURL">Data Objects/Search Plus Reporting</property>
+            <property name="accessType">latest</property>
+        </data-mart-data-source>
+    </data-sources>
+    <property name="linkedDataModels">
+        <data-mart-linked-data-model name="Search Plus" id="9">
+            <property name="dataSource">conSearchPlusDO</property>
+            <property name="dataObject">Search Plus</property>
+        </data-mart-linked-data-model>
+    </property>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-header>
+                <grid id="282">
+                    <column id="283"/>
+                    <row id="285">
+                        <property name="style">ReportTitle</property>
+                        <property name="height">0.5in</property>
+                        <cell id="286">
+                            <text id="291">
+                                <property name="style">ReportTitle</property>
+                                <property name="contentType">html</property>
+                                <text-property name="content"><![CDATA[Query <b><VALUE-OF>params["prmSearchText"].value</VALUE-OF></b> activity 
+<VALUE-OF> 
+if (BirtDateTime.diffDay(params["prmActivityEndDate"].value,params["prmActivityStartDate"].value) == 0) {
+     "on " + Formatter.format(params["prmActivityStartDate"].value, "Medium Date")  
+} else { 
+	" between " + Formatter.format(params["prmActivityStartDate"].value, "Medium Date") + " and " +     Formatter.format(params["prmActivityEndDate"].value, "Medium Date")
+}
+</VALUE-OF>]]></text-property>
+                            </text>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table name="Activities" id="81">
+            <list-property name="userProperties">
+                <structure>
+                    <property name="name">__ac_group_collapse_level</property>
+                    <property name="type">string</property>
+                </structure>
+            </list-property>
+            <property name="__ac_group_collapse_level">2</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ID</property>
+                    <text-property name="displayName">ID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">User</property>
+                    <text-property name="displayName">User</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["User"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Event</property>
+                    <text-property name="displayName">Event</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Event"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Search Text</property>
+                    <text-property name="displayName">Search Text</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Search Text"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Query Time</property>
+                    <text-property name="displayName">Query Time</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Query Time"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">Hits</property>
+                    <text-property name="displayName">Hits</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Hits"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Search Date</property>
+                    <text-property name="displayName">Search Date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Search Date"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">DailyCount</property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>prmActivityDate</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">DailyAvgQueryTime</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>prmActivityDate</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">DailyMaxQueryTime</property>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>prmActivityDate</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">MAX</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">EventCount</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">EventAvgQueryTime</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">EventMaxQueryTime</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">MAX</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">ActivityCount</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">COUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["ID"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">AvgQueryTime</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">AVE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">MaxQueryTime</property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">MAX</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Query Time"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Search DateTime</property>
+                    <expression name="expression" type="javascript">dataSetRow["Search DateTime"]</expression>
+                    <property name="dataType">date-time</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <property name="linkedDataModel">Search Plus</property>
+            <list-property name="sort">
+                <structure>
+                    <expression name="key" type="javascript">row["Event"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+                <structure>
+                    <expression name="key" type="javascript">row["Search DateTime"]</expression>
+                    <property name="direction">asc</property>
+                    <property name="strength">-1</property>
+                </structure>
+            </list-property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">eq</property>
+                    <expression name="expr" type="javascript">row["Search Text"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">params["prmSearchText"].value</value>
+                    </simple-property-list>
+                    <property name="updateAggregation">true</property>
+                </structure>
+                <structure>
+                    <property name="operator">between</property>
+                    <expression name="expr" type="javascript">row["Search Date"]</expression>
+                    <simple-property-list name="value1">
+                        <value type="javascript">params["prmActivityStartDate"].value</value>
+                    </simple-property-list>
+                    <expression name="value2" type="javascript">params["prmActivityEndDate"].value</expression>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <column id="120">
+                <property name="textAlign">left</property>
+            </column>
+            <column id="121">
+                <property name="textAlign">left</property>
+            </column>
+            <column id="123">
+                <property name="textAlign">left</property>
+            </column>
+            <column id="124">
+                <property name="textAlign">right</property>
+            </column>
+            <column id="125">
+                <property name="textAlign">right</property>
+            </column>
+            <header>
+                <row id="82">
+                    <cell id="83">
+                        <label id="96">
+                            <text-property name="text">Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="85">
+                        <label id="86">
+                            <text-property name="text">User</text-property>
+                        </label>
+                    </cell>
+                    <cell id="89">
+                        <label id="90">
+                            <text-property name="text">Search Text</text-property>
+                        </label>
+                    </cell>
+                    <cell id="91">
+                        <label id="92">
+                            <text-property name="text">Query Time &#13;
+(in milliseconds)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="93">
+                        <label id="94">
+                            <text-property name="text">Hits</text-property>
+                        </label>
+                    </cell>
+                </row>
+                <row id="294">
+                    <cell id="295">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                    </cell>
+                </row>
+                <row id="314">
+                    <cell id="315">
+                        <property name="colSpan">5</property>
+                        <property name="rowSpan">1</property>
+                        <extended-item extensionName="Chart" name="KeywordChart" id="320">
+                            <xml-property name="xmlRepresentation"><![CDATA[<ActuateChart version="2.6.1">
+ <ChartWithAxes version="2.6.1" type="Bar Chart" subType="Side-by-side">
+  <block>
+   <children _type="TitleBlock">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <label>
+     <caption value="Search Query Activity"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+   </children>
+   <children _type="Plot">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+   </children>
+   <children _type="Legend" visible="false">
+    <outline>
+     <color _nil="1"/>
+    </outline>
+    <clientArea>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </clientArea>
+    <separator>
+     <color _nil="1"/>
+    </separator>
+    <title>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+   </children>
+   <bounds _body="0.0,0.0,563.25,130.0"/>
+   <outline>
+    <color _nil="1"/>
+   </outline>
+  </block>
+  <extendedProperties name="enable.area.alt" value="false"/>
+  <extendedProperties name="enable.drill.category" value="true"/>
+  <extendedProperties name="enable.drill.series" value="true"/>
+  <extendedProperties name="enable.data.summarize" value="true"/>
+  <extendedProperties name="jschart.series.shadow" value="false"/>
+  <sampleData>
+   <baseSampleData dataSetRepresentation="01/05/2000,02/01/2000,04/12/2000,03/12/2000,02/29/2000"/>
+   <orthogonalSampleData dataSetRepresentation="6,4,12,8,10" seriesDefinitionIndex="0"/>
+   <orthogonalSampleData dataSetRepresentation="42,91,62,9,21" seriesDefinitionIndex="1"/>
+  </sampleData>
+  <emptyMessage>
+   <caption value="This chart contains no data."/>
+   <background _body=",64,127,127,127"/>
+   <outline>
+    <color _body=",128,127,127,127"/>
+   </outline>
+  </emptyMessage>
+  <axes type="3">
+   <title>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </title>
+   <associatedAxes type="0" primaryAxis="true" percent="false">
+    <title visible="true">
+     <caption value="No of Searches"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="BarSeries" seriesIdentifier="# Searches" stacked="false" riser="0">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;ID&quot;]">
+       <grouping enabled="true" aggregateExpression="DistinctCount"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin>
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <associatedAxes type="0" titlePosition="3" labelPosition="3" primaryAxis="false" percent="false">
+    <title visible="true">
+     <caption value="No of Unique Users"/>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </title>
+    <seriesDefinitions>
+     <query definition=""/>
+     <series _type="LineSeries" seriesIdentifier="# Distinct Users" stacked="false">
+      <label>
+       <background _nil="1"/>
+       <outline>
+        <color _nil="1"/>
+       </outline>
+      </label>
+      <dataDefinition definition="row[&quot;User&quot;]">
+       <grouping enabled="true" aggregateExpression="DistinctCount"/>
+      </dataDefinition>
+      <triggers condition="6">
+       <action type="1">
+        <value _type="TooltipValue" text="" delay="200"/>
+       </action>
+      </triggers>
+      <curveFitting _nil="1"/>
+      <markers>
+       <outline/>
+      </markers>
+      <lineAttributes>
+       <color _nil="1"/>
+      </lineAttributes>
+     </series>
+     <grouping _nil="1"/>
+    </seriesDefinitions>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <label>
+     <background _nil="1"/>
+     <outline>
+      <color _nil="1"/>
+     </outline>
+    </label>
+    <majorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </majorGrid>
+    <minorGrid>
+     <lineAttributes>
+      <color _nil="1"/>
+     </lineAttributes>
+     <tickAttributes>
+      <color _nil="1"/>
+     </tickAttributes>
+    </minorGrid>
+    <origin type="1">
+     <value _nil="1"/>
+    </origin>
+   </associatedAxes>
+   <seriesDefinitions>
+    <query definition=""/>
+    <series seriesIdentifier="">
+     <label>
+      <background _nil="1"/>
+      <outline>
+       <color _nil="1"/>
+      </outline>
+     </label>
+     <dataDefinition definition="row[&quot;Search Date&quot;]"/>
+     <curveFitting _nil="1"/>
+    </series>
+    <grouping enabled="true" groupType="1"/>
+    <sortKey/>
+   </seriesDefinitions>
+   <lineAttributes>
+    <color _nil="1"/>
+   </lineAttributes>
+   <label>
+    <background _nil="1"/>
+    <outline>
+     <color _nil="1"/>
+    </outline>
+   </label>
+   <formatSpecifier _type="JavaDateFormatSpecifier" pattern="MMM dd"/>
+   <majorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </majorGrid>
+   <minorGrid>
+    <lineAttributes>
+     <color _nil="1"/>
+    </lineAttributes>
+    <tickAttributes>
+     <color _nil="1"/>
+    </tickAttributes>
+   </minorGrid>
+   <origin>
+    <value _nil="1"/>
+   </origin>
+  </axes>
+  <rotation>
+   <angles/>
+  </rotation>
+ </ChartWithAxes>
+</ActuateChart>
+]]></xml-property>
+                            <property name="outputFormat">JS</property>
+                            <list-property name="filter">
+                                <structure>
+                                    <property name="operator">eq</property>
+                                    <expression name="expr" type="javascript">row["Search Text"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">params["prmSearchText"].value</value>
+                                    </simple-property-list>
+                                    <property name="updateAggregation">true</property>
+                                </structure>
+                                <structure>
+                                    <property name="operator">between</property>
+                                    <expression name="expr" type="javascript">row["Search Date"]</expression>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">params["prmActivityStartDate"].value</value>
+                                    </simple-property-list>
+                                    <expression name="value2" type="javascript">params["prmActivityEndDate"].value</expression>
+                                    <property name="updateAggregation">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="inheritColumns">false</property>
+                            <property name="height">200pt</property>
+                            <property name="width">100%</property>
+                            <list-property name="boundDataColumns">
+                                <structure>
+                                    <property name="name">ID</property>
+                                    <text-property name="displayName">ID</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["ID"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">User</property>
+                                    <text-property name="displayName">User</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["User"]</expression>
+                                    <property name="dataType">string</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Search Date</property>
+                                    <text-property name="displayName">Search Date</text-property>
+                                    <expression name="expression" type="javascript">dataSetRow["Search Date"]</expression>
+                                    <property name="dataType">date</property>
+                                </structure>
+                                <structure>
+                                    <property name="name">Search Text</property>
+                                    <expression name="expression" type="javascript">dataSetRow["Search Text"]</expression>
+                                    <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
+                                </structure>
+                            </list-property>
+                            <property name="linkedDataModel">Search Plus</property>
+                        </extended-item>
+                    </cell>
+                </row>
+            </header>
+            <group id="145">
+                <property name="groupName">prmActivityDate</property>
+                <property name="interval">day</property>
+                <expression name="keyExpr" type="javascript">row["Search Date"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Search Date"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="146">
+                        <cell id="147">
+                            <data id="158">
+                                <structure name="dateTimeFormat">
+                                    <property name="category">Medium Date</property>
+                                    <property name="pattern">Medium Date</property>
+                                </structure>
+                                <property name="resultSetColumn">Search Date</property>
+                            </data>
+                            <data id="292"/>
+                        </cell>
+                        <cell id="148"/>
+                        <cell id="149">
+                            <grid id="159">
+                                <property name="width">3in</property>
+                                <column id="160"/>
+                                <column id="161">
+                                    <property name="width">0.5416666666666666in</property>
+                                </column>
+                                <row id="162">
+                                    <cell id="163">
+                                        <label id="171">
+                                            <text-property name="text">Count</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="164">
+                                        <data id="175">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                            </structure>
+                                            <property name="resultSetColumn">DailyCount</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                                <row id="165">
+                                    <cell id="166">
+                                        <label id="172">
+                                            <text-property name="text">Avg Query Time</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="167">
+                                        <data id="176">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                            </structure>
+                                            <property name="resultSetColumn">DailyAvgQueryTime</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                                <row id="168">
+                                    <cell id="169">
+                                        <label id="174">
+                                            <text-property name="text">Max Query Time</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="170">
+                                        <data id="177">
+                                            <structure name="numberFormat">
+                                                <property name="category">Fixed</property>
+                                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                            </structure>
+                                            <property name="resultSetColumn">DailyMaxQueryTime</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="150"/>
+                        <cell id="151"/>
+                    </row>
+                </header>
+            </group>
+            <detail>
+                <row id="97">
+                    <list-property name="highlightRules">
+                        <structure>
+                            <property name="operator">eq</property>
+                            <property name="backgroundColor">#F4F4F4</property>
+                            <expression name="testExpr" type="javascript">row.__rownum % 2</expression>
+                            <simple-property-list name="value1">
+                                <value type="javascript">1</value>
+                            </simple-property-list>
+                        </structure>
+                    </list-property>
+                    <cell id="98">
+                        <data id="111">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">MM/dd/yyyy hh:mm a</property>
+                            </structure>
+                            <property name="resultSetColumn">Search DateTime</property>
+                        </data>
+                    </cell>
+                    <cell id="100">
+                        <data id="101">
+                            <property name="resultSetColumn">User</property>
+                        </data>
+                    </cell>
+                    <cell id="104">
+                        <data id="105">
+                            <property name="resultSetColumn">Search Text</property>
+                        </data>
+                    </cell>
+                    <cell id="106">
+                        <data id="107">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Query Time</property>
+                        </data>
+                    </cell>
+                    <cell id="108">
+                        <data id="109">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="resultSetColumn">Hits</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+        </table>
+    </body>
+</report>

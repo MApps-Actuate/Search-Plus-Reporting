@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Search+ Reporting</title>
+	<script type="text/javascript" language="JavaScript" src="../../jsapi"></script>
+	<script type="text/javascript" language="JavaScript">
+
+		var viewer = null;
+		var explorer = null;
+		var parameter = null;
+		var appName = "MyApp";
+		var reportName = null;
+		function init( ){
+			// Default Values
+			var baseURL = "/iportal";
+			var volumeProfile = "Default Volume";
+			var volume = null;
+
+
+			// Calculate values from current URL
+			var currentPage = new URL(location.href);
+			var pathNames = currentPage.pathname.split("/");
+			if (pathNames.length > 4) {
+				// URL should have /iportal/apps/<appname>
+				baseURL = currentPage.origin + "/" + pathNames[1] + "/";
+				appName = decodeURIComponent(pathNames[3]);
+			}
+
+			var paramValue = currentPage.searchParams.get("__vp");
+			if (paramValue) {
+				volumeProfile = paramValue;
+			} else {
+
+				paramValue = currentPage.searchParams.get("volume");
+				if (paramValue) {
+					volume = paramValue;
+				}
+			}
+			var username = null;
+			var password = null;
+			paramValue = currentPage.searchParams.get("userid");
+			if (paramValue) {
+				username = paramValue;
+				paramValue = currentPage.searchParams.get("password");
+				if (paramValue) {
+					password = paramValue;
+				}
+			}
+
+			// Calcualte report name with derived values
+			calculateReportName();
+
+
+			actuate.load("viewer");
+			actuate.load("parameter");
+
+			var reqOps = new actuate.RequestOptions( );
+			if (volumeProfile) {
+				reqOps.setVolumeProfile(volumeProfile);
+			} else if (volume) {
+				reqOps.setVolume(volume);
+			}
+
+			reqOps.setRepositoryType(actuate.RequestOptions.REPOSITORY_ENCYCLOPEDIA);
+			if (actuate.isConnected() || username == null) {
+				actuate.initialize( baseURL, reqOps, null, null, displayParameter);
+			} else {
+				actuate.initialize( baseURL, reqOps, username, password, displayParameter);
+			}
+		}
+
+		function calculateReportName() {
+			reportName = "/Applications/" + appName + "/Report Designs/Search Plus Reporting.rptdesign";
+		}
+
+
+		function runReport(parameters) {
+			if (viewer == null) {
+				var panel = new actuate.viewer.BrowserPanel();
+				//var panel = new actuate.viewer.ScrollPanel();
+
+				var uiConfig = new actuate.viewer.UIConfig();
+				uiConfig.setContentPanel(panel);
+
+				viewer = new actuate.Viewer("viewerpane", uiConfig);
+			}
+			//var reportName = "/Applications/Search Plus Reporting/Report Designs/Search Plus Reporting.rptdesign";
+			var reportName = "/Applications/" + appName + "/Report Designs/Search Plus Reporting.rptdesign";
+			viewer.setReportName(reportName);
+			if (parameters != null) {
+				viewer.setParameterValues(parameters);
+			}
+			viewer.setWidth($(window).width()-25);
+			viewer.setHeight($(window).height()-90);
+			viewer.submit();
+		}
+		function displayParameter() {
+			// Run and display report with default parameter
+			runReport(null);
+			if (parameter == null) {
+				parameter = new actuate.Parameter("parampane");
+			}
+			parameter.setReportName(reportName);
+			parameter.submit();
+
+			$("#btnRunReport").prop("disabled", false);
+		}
+		function processParameters( ) {
+			parameter.downloadParameterValues(runReport);
+		}
+	</script>
+	<Style>
+	.explorerContainer {
+	 }
+	.explorerpane {
+		width: 400px;
+		height: 250px;
+		display: inline-block;
+
+	}
+	.parampane {
+		height: 65px;
+		width: 500px;
+		display: inline-block;
+	}
+</Style>
+</head>
+<body onload="init( )">
+	<div id="ExplorerContainer" class="explorerContainer">
+		<div id="parampane" class="parampane"></div>
+		<input type="button" disabled class="btn" id="btnRunReport" value="Apply" onclick="processParameters()">
+	</div>
+	<div id="viewerpane"></div>
+</body>
+</html>
