@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <datamart xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.8.0.v201804241733</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.11.0.v202101151752</property>
     <list-property name="userProperties">
         <structure>
             <property name="name">7.dsSearchKeywords.x</property>
@@ -346,11 +346,15 @@
                 <ex-property>
                     <name>disabledContentBidiFormatStr</name>
                 </ex-property>
+                <ex-property>
+                    <name>PostgresSupportSP</name>
+                    <value>true</value>
+                </ex-property>
             </list-property>
             <property name="odaDriverClass">org.postgresql.Driver</property>
-            <property name="odaURL">jdbc:postgresql://10.9.40.168:5432/SearchPlus</property>
+            <property name="odaURL">jdbc:postgresql://10.18.50.94:5432/SearchPlus</property>
             <property name="odaUser">postgres</property>
-            <encrypted-property name="odaPassword" encryptionID="jce">ed692c756ac318b4caab65efdde92e0b</encrypted-property>
+            <encrypted-property name="odaPassword" encryptionID="jce">40dbff815b530dd3</encrypted-property>
         </oda-data-source>
     </data-sources>
     <data-sets>
